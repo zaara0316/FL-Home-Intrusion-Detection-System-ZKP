@@ -1,0 +1,265 @@
+# PYTHON
+**pycache**/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+
+venv/
+env/
+.venv/
+ENV/
+
+# ENVIRONMENT VARIABLES AND SECRETS
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Kaggle credentials
+
+.kaggle/
+kaggle.json
+access_token.txt
+access_token
+
+# DATASETS
+
+# Original downloaded dataset
+
+dataset/raw/
+dataset/processed/
+
+# Large processed datasets
+
+*.zip
+*.7z
+*.tar
+*.gz
+
+# EXPERIMENTAL DATA
+
+# Generated client partitions
+
+dataset/partitions/
+
+# IID and non-IID generated partitions
+
+experiments/iid/partitions/
+experiments/non_iid/partitions/
+
+# ============================================================
+
+# MODEL ARTIFACTS
+
+# ============================================================
+
+# Trained model binaries
+
+*.joblib
+*.pkl
+*.pickle
+*.h5
+*.keras
+*.pt
+*.pth
+*.onnx
+
+# Model artifacts and generated experiment outputs
+artifacts/
+experiments/iid/artifacts/
+experiments/non_iid/artifacts/
+
+# Generated model weights
+
+artifacts/client_preprocessing/
+
+# Experiment outputs and logs
+
+artifacts/
+experiments/iid/artifacts/
+experiments/non_iid/artifacts/
+
+# Generated prediction files
+
+federated_test_predictions.csv
+
+# ============================================================
+
+# LOGS
+
+# ============================================================
+
+logs/
+*.log
+
+# ============================================================
+
+# IDE AND OPERATING SYSTEM
+
+# ============================================================
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+
+# NODE.JS (IF USED FOR ZKP / DASHBOARD)
+
+# ============================================================
+
+node_modules/
+dist/
+build/
+.next/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ============================================================
+
+# TEMPORARY FILES
+
+# ============================================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+
+
+**Important:** This intentionally ignores generated datasets and model artifacts, not your source code. Your partition-generation scripts and experiment manifests will still be backed up.
+
+Your original `artifacts/` directory contains important experimental results, however. We should preserve those separately before relying on this ignore rule.
+
+# 2. Check what Git will track
+
+Run:
+
+```cmd
+git status --short
+````
+
+Files such as these should remain visible to Git:
+
+```text
+home.py
+server.py
+docker-compose.yml
+Dockerfile
+requirements.txt
+partition_dataset.py
+evaluate_federated.py
+evaluate_attack_types.py
+experiment_scripts/
+```
+
+Generated CSV datasets, model files, and logs should be ignored.
+
+## Important: Preserve your research results
+
+I recommend creating a separate folder for compact, reproducible research outputs:
+
+
+
+These are relatively small files and useful for reproducing your paper's tables and graphs.
+
+We can create this folder and copy the relevant results into it once we finalize the experimental outputs. Don't delete your existing artifacts.
+
+# 3. Initialize Git and back up your project
+
+If Git is not initialized yet:
+
+```cmd
+git init
+```
+
+Then:
+
+```cmd
+git add .
+git status
+```
+
+Review the staged files carefully. In particular, make sure no Kaggle token, private key, or other credential is staged.
+
+Commit:
+
+```cmd
+git commit -m "Initial backup of FedNatD federated learning project"
+```
+
+If Git asks for your identity:
+
+```cmd
+git config --global user.name "Zaara Alladin"
+git config --global user.email "YOUR_GITHUB_EMAIL"
+```
+
+Then repeat the commit.
+
+# 4. Connect your GitHub repository
+
+You already have a GitHub account, so I'd recommend creating a **private repository** named:
+
+`FedNatD`
+
+On GitHub, create the empty repository without initializing a README or `.gitignore`.
+
+Then run:
+
+```cmd
+git branch -M main
+
+git remote add origin https://github.com/zaara0316/FedNatD.git
+
+git push -u origin main
+```
+
+Replace the repository URL if you choose another name.
+
+For subsequent backups, use:
+
+```cmd
+git add .
+git commit -m "Describe your changes"
+git push
+```
+
+---
+
+# 5. Our next implementation milestone
+
+Once your backup is complete, we'll continue with the independent experimental environment.
+
+The next files will be:
+
+| File                             | Purpose                                           |
+| -------------------------------- | ------------------------------------------------- |
+| `home_experiment.py`             | Independent IID/non-IID clients                   |
+| `server_experiment.py`           | Separate FedAvg aggregation server                |
+| `docker-compose.experiments.yml` | Runs both experiments independently               |
+| `evaluate_experiments.py`        | Evaluates both global models on the same test set |
+
+We'll preserve your existing `home.py`, `server.py`, and `docker-compose.yml` unchanged.
+
+**One thing I particularly want to maintain:** every experiment should have its own configuration, random seed, model, history, and metrics. This will make your eventual paper much easier to reproduce and defend.
+
+After creating the `.gitignore`, run `git status --short` and send me the output.

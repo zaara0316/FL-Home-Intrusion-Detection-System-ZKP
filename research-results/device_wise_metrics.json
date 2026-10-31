@@ -1,0 +1,19 @@
+{
+    "training_devices": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "testing_device": 5,
+    "accuracy": 0.99,
+    "precision": 0.9893964110929854,
+    "recall": 0.9989411764705882,
+    "f1_score": 0.9941458845568435,
+    "roc_auc": 0.9640414901960785,
+    "false_positive_rate": 0.06066666666666667,
+    "true_negatives": 1409,
+    "false_positives": 91,
+    "false_negatives": 9,
+    "true_positives": 8491
+}

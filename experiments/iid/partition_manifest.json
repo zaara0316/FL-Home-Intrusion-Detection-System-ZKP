@@ -1,0 +1,81 @@
+{
+    "experiment": "iid",
+    "random_state": 42,
+    "clients": [
+        {
+            "home_id": "home-1",
+            "total_samples": 12960,
+            "benign_samples": 1120,
+            "attack_samples": 11840,
+            "benign_proportion": 0.08641975308641975,
+            "attack_proportion": 0.9135802469135802,
+            "device_distribution": {
+                "1": 3440,
+                "4": 3278,
+                "2": 3143,
+                "5": 1594,
+                "3": 1505
+            }
+        },
+        {
+            "home_id": "home-2",
+            "total_samples": 12960,
+            "benign_samples": 1120,
+            "attack_samples": 11840,
+            "benign_proportion": 0.08641975308641975,
+            "attack_proportion": 0.9135802469135802,
+            "device_distribution": {
+                "1": 3379,
+                "4": 3256,
+                "2": 3146,
+                "5": 1703,
+                "3": 1476
+            }
+        },
+        {
+            "home_id": "home-3",
+            "total_samples": 12960,
+            "benign_samples": 1120,
+            "attack_samples": 11840,
+            "benign_proportion": 0.08641975308641975,
+            "attack_proportion": 0.9135802469135802,
+            "device_distribution": {
+                "1": 3533,
+                "4": 3308,
+                "2": 3050,
+                "3": 1554,
+                "5": 1515
+            }
+        },
+        {
+            "home_id": "home-4",
+            "total_samples": 12960,
+            "benign_samples": 1120,
+            "attack_samples": 11840,
+            "benign_proportion": 0.08641975308641975,
+            "attack_proportion": 0.9135802469135802,
+            "device_distribution": {
+                "1": 3448,
+                "4": 3260,
+                "2": 3128,
+                "5": 1594,
+                "3": 1530
+            }
+        },
+        {
+            "home_id": "home-5",
+            "total_samples": 12960,
+            "benign_samples": 1120,
+            "attack_samples": 11840,
+            "benign_proportion": 0.08641975308641975,
+            "attack_proportion": 0.9135802469135802,
+            "device_distribution": {
+                "1": 3400,
+                "4": 3298,
+                "2": 3133,
+                "5": 1594,
+                "3": 1535
+            }
+        }
+    ]
+}

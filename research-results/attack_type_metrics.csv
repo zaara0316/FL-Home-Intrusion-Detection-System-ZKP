@@ -1,0 +1,12 @@
+attack_type,total_samples,attack_samples,detected_attacks,missed_attacks,detection_rate,false_negative_rate
+mirai.udp,1497,1497,1483,14,0.9906479625918504,0.009352037408149633
+gafgyt.scan,949,949,942,7,0.9926238145416227,0.007376185458377239
+gafgyt.tcp,2181,2181,2180,1,0.9995414947271893,0.0004585052728106373
+gafgyt.junk,1056,1056,1056,0,1.0,0.0
+gafgyt.udp,2470,2470,2470,0,1.0,0.0
+mirai.ack,1309,1309,1309,0,1.0,0.0
+mirai.scan,1248,1248,1248,0,1.0,0.0
+gafgyt.combo,1501,1501,1501,0,1.0,0.0
+mirai.syn,1430,1430,1430,0,1.0,0.0
+mirai.udpplain,1159,1159,1159,0,1.0,0.0
+benign,1400,0,0,0,,

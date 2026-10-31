@@ -1,0 +1,470 @@
+{
+    "total_test_samples": 16200,
+    "total_attack_samples": 14800,
+    "total_benign_samples": 1400,
+    "benign_false_alarms": 34,
+    "benign_false_alarm_rate": 0.024285714285714285,
+    "attack_type_metrics": [
+        {
+            "attack_type": "mirai.udp",
+            "total_samples": 1497,
+            "attack_samples": 1497,
+            "detected_attacks": 1483,
+            "missed_attacks": 14,
+            "detection_rate": 0.9906479625918504,
+            "false_negative_rate": 0.009352037408149633
+        },
+        {
+            "attack_type": "gafgyt.scan",
+            "total_samples": 949,
+            "attack_samples": 949,
+            "detected_attacks": 942,
+            "missed_attacks": 7,
+            "detection_rate": 0.9926238145416227,
+            "false_negative_rate": 0.007376185458377239
+        },
+        {
+            "attack_type": "gafgyt.tcp",
+            "total_samples": 2181,
+            "attack_samples": 2181,
+            "detected_attacks": 2180,
+            "missed_attacks": 1,
+            "detection_rate": 0.9995414947271893,
+            "false_negative_rate": 0.0004585052728106373
+        },
+        {
+            "attack_type": "gafgyt.junk",
+            "total_samples": 1056,
+            "attack_samples": 1056,
+            "detected_attacks": 1056,
+            "missed_attacks": 0,
+            "detection_rate": 1.0,
+            "false_negative_rate": 0.0
+        },
+        {
+            "attack_type": "gafgyt.udp",
+            "total_samples": 2470,
+            "attack_samples": 2470,
+            "detected_attacks": 2470,
+            "missed_attacks": 0,
+            "detection_rate": 1.0,
+            "false_negative_rate": 0.0
+        },
+        {
+            "attack_type": "mirai.ack",
+            "total_samples": 1309,
+            "attack_samples": 1309,
+            "detected_attacks": 1309,
+            "missed_attacks": 0,
+            "detection_rate": 1.0,
+            "false_negative_rate": 0.0
+        },
+        {
+            "attack_type": "mirai.scan",
+            "total_samples": 1248,
+            "attack_samples": 1248,
+            "detected_attacks": 1248,
+            "missed_attacks": 0,
+            "detection_rate": 1.0,
+            "false_negative_rate": 0.0
+        },
+        {
+            "attack_type": "gafgyt.combo",
+            "total_samples": 1501,
+            "attack_samples": 1501,
+            "detected_attacks": 1501,
+            "missed_attacks": 0,
+            "detection_rate": 1.0,
+            "false_negative_rate": 0.0
+        },
+        {
+            "attack_type": "mirai.syn",
+            "total_samples": 1430,
+            "attack_samples": 1430,
+            "detected_attacks": 1430,
+            "missed_attacks": 0,
+            "detection_rate": 1.0,
+            "false_negative_rate": 0.0
+        },
+        {
+            "attack_type": "mirai.udpplain",
+            "total_samples": 1159,
+            "attack_samples": 1159,
+            "detected_attacks": 1159,
+            "missed_attacks": 0,
+            "detection_rate": 1.0,
+            "false_negative_rate": 0.0
+        },
+        {
+            "attack_type": "benign",
+            "total_samples": 1400,
+            "attack_samples": 0,
+            "detected_attacks": 0,
+            "missed_attacks": 0,
+            "detection_rate": NaN,
+            "false_negative_rate": NaN
+        }
+    ],
+    "home_attack_type_metrics": [
+        {
+            "home_id": "home-1",
+            "attack_type": "gafgyt.combo",
+            "total_samples": 299,
+            "attack_samples": 299,
+            "detected_attacks": 299,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "gafgyt.junk",
+            "total_samples": 215,
+            "attack_samples": 215,
+            "detected_attacks": 215,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "gafgyt.scan",
+            "total_samples": 178,
+            "attack_samples": 178,
+            "detected_attacks": 175,
+            "missed_attacks": 3,
+            "detection_rate": 0.9831460674157303
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "gafgyt.tcp",
+            "total_samples": 401,
+            "attack_samples": 401,
+            "detected_attacks": 401,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "gafgyt.udp",
+            "total_samples": 484,
+            "attack_samples": 484,
+            "detected_attacks": 484,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "mirai.ack",
+            "total_samples": 467,
+            "attack_samples": 467,
+            "detected_attacks": 467,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "mirai.scan",
+            "total_samples": 525,
+            "attack_samples": 525,
+            "detected_attacks": 525,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "mirai.syn",
+            "total_samples": 484,
+            "attack_samples": 484,
+            "detected_attacks": 484,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "mirai.udp",
+            "total_samples": 619,
+            "attack_samples": 619,
+            "detected_attacks": 605,
+            "missed_attacks": 14,
+            "detection_rate": 0.9773828756058158
+        },
+        {
+            "home_id": "home-1",
+            "attack_type": "mirai.udpplain",
+            "total_samples": 428,
+            "attack_samples": 428,
+            "detected_attacks": 428,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "gafgyt.combo",
+            "total_samples": 287,
+            "attack_samples": 287,
+            "detected_attacks": 287,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "gafgyt.junk",
+            "total_samples": 214,
+            "attack_samples": 214,
+            "detected_attacks": 214,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "gafgyt.scan",
+            "total_samples": 186,
+            "attack_samples": 186,
+            "detected_attacks": 185,
+            "missed_attacks": 1,
+            "detection_rate": 0.9946236559139785
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "gafgyt.tcp",
+            "total_samples": 415,
+            "attack_samples": 415,
+            "detected_attacks": 415,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "gafgyt.udp",
+            "total_samples": 477,
+            "attack_samples": 477,
+            "detected_attacks": 477,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "mirai.ack",
+            "total_samples": 467,
+            "attack_samples": 467,
+            "detected_attacks": 467,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "mirai.scan",
+            "total_samples": 224,
+            "attack_samples": 224,
+            "detected_attacks": 224,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "mirai.syn",
+            "total_samples": 521,
+            "attack_samples": 521,
+            "detected_attacks": 521,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "mirai.udp",
+            "total_samples": 580,
+            "attack_samples": 580,
+            "detected_attacks": 580,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-2",
+            "attack_type": "mirai.udpplain",
+            "total_samples": 429,
+            "attack_samples": 429,
+            "detected_attacks": 429,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-3",
+            "attack_type": "gafgyt.combo",
+            "total_samples": 310,
+            "attack_samples": 310,
+            "detected_attacks": 310,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-3",
+            "attack_type": "gafgyt.junk",
+            "total_samples": 208,
+            "attack_samples": 208,
+            "detected_attacks": 208,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-3",
+            "attack_type": "gafgyt.scan",
+            "total_samples": 195,
+            "attack_samples": 195,
+            "detected_attacks": 194,
+            "missed_attacks": 1,
+            "detection_rate": 0.9948717948717949
+        },
+        {
+            "home_id": "home-3",
+            "attack_type": "gafgyt.tcp",
+            "total_samples": 495,
+            "attack_samples": 495,
+            "detected_attacks": 495,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-3",
+            "attack_type": "gafgyt.udp",
+            "total_samples": 492,
+            "attack_samples": 492,
+            "detected_attacks": 492,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "gafgyt.combo",
+            "total_samples": 307,
+            "attack_samples": 307,
+            "detected_attacks": 307,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "gafgyt.junk",
+            "total_samples": 206,
+            "attack_samples": 206,
+            "detected_attacks": 206,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "gafgyt.scan",
+            "total_samples": 199,
+            "attack_samples": 199,
+            "detected_attacks": 198,
+            "missed_attacks": 1,
+            "detection_rate": 0.9949748743718593
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "gafgyt.tcp",
+            "total_samples": 392,
+            "attack_samples": 392,
+            "detected_attacks": 392,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "gafgyt.udp",
+            "total_samples": 497,
+            "attack_samples": 497,
+            "detected_attacks": 497,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "mirai.ack",
+            "total_samples": 375,
+            "attack_samples": 375,
+            "detected_attacks": 375,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "mirai.scan",
+            "total_samples": 499,
+            "attack_samples": 499,
+            "detected_attacks": 499,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "mirai.syn",
+            "total_samples": 425,
+            "attack_samples": 425,
+            "detected_attacks": 425,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "mirai.udp",
+            "total_samples": 298,
+            "attack_samples": 298,
+            "detected_attacks": 298,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-4",
+            "attack_type": "mirai.udpplain",
+            "total_samples": 302,
+            "attack_samples": 302,
+            "detected_attacks": 302,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-5",
+            "attack_type": "gafgyt.combo",
+            "total_samples": 298,
+            "attack_samples": 298,
+            "detected_attacks": 298,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-5",
+            "attack_type": "gafgyt.junk",
+            "total_samples": 213,
+            "attack_samples": 213,
+            "detected_attacks": 213,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        },
+        {
+            "home_id": "home-5",
+            "attack_type": "gafgyt.scan",
+            "total_samples": 191,
+            "attack_samples": 191,
+            "detected_attacks": 190,
+            "missed_attacks": 1,
+            "detection_rate": 0.9947643979057592
+        },
+        {
+            "home_id": "home-5",
+            "attack_type": "gafgyt.tcp",
+            "total_samples": 478,
+            "attack_samples": 478,
+            "detected_attacks": 477,
+            "missed_attacks": 1,
+            "detection_rate": 0.997907949790795
+        },
+        {
+            "home_id": "home-5",
+            "attack_type": "gafgyt.udp",
+            "total_samples": 520,
+            "attack_samples": 520,
+            "detected_attacks": 520,
+            "missed_attacks": 0,
+            "detection_rate": 1.0
+        }
+    ]
+}

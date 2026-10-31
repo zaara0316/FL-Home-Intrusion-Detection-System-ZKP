@@ -1,0 +1,17 @@
+{
+    "model": "Controlled Centralized Logistic Regression",
+    "training_samples": 64800,
+    "testing_samples": 16200,
+    "accuracy": 0.9996296296296296,
+    "precision": 0.999864846600892,
+    "recall": 0.9997297297297297,
+    "f1_score": 0.9997972836002432,
+    "roc_auc": 0.9992643822393823,
+    "false_positive_rate": 0.0014285714285714286,
+    "confusion_matrix": {
+        "TN": 1398,
+        "FP": 2,
+        "FN": 4,
+        "TP": 14796
+    }
+}

@@ -1,0 +1,354 @@
+services:
+
+  # ==========================================================
+  # FEDERATED SERVER
+  # ==========================================================
+
+  fl-server:
+
+    build: .
+
+    command: ["python", "-u", "server.py"]
+
+    environment:
+
+      SERVER_HOST: "0.0.0.0"
+
+      SERVER_PORT: "8000"
+
+      MODEL_FEATURES: "115"
+
+    ports:
+
+      - "8000:8000"
+
+    volumes:
+
+      - ./artifacts:/app/artifacts
+
+      - ./logs:/app/logs
+
+    networks:
+
+      - fednatd-net
+
+
+  # ==========================================================
+  # HOME 1
+  # ==========================================================
+
+  home-1:
+
+    build: .
+
+    command: ["python", "-u", "home.py"]
+
+    environment:
+
+      HOME_ID: "home-1"
+
+      DEVICE_ID: "1"
+
+      DATASET_PATH: "/data/train.csv"
+
+      FEATURE_SCHEMA_PATH: "/app/artifacts/feature_columns.json"
+
+      FL_SERVER_URL: "http://fl-server:8000"
+
+      TRAIN_ROUNDS: "5"
+
+      LOCAL_EPOCHS: "3"
+
+      LEARNING_RATE: "0.01"
+
+    volumes:
+
+      - ./dataset/partitions/home-1-train.csv:/data/train.csv:ro
+
+      - ./artifacts:/app/artifacts
+
+      - ./logs:/app/logs
+
+    depends_on:
+
+      - fl-server
+
+    networks:
+
+      - fednatd-net
+
+
+  # ==========================================================
+  # HOME 2
+  # ==========================================================
+
+  home-2:
+
+    build: .
+
+    command: ["python", "-u", "home.py"]
+
+    environment:
+
+      HOME_ID: "home-2"
+
+      DEVICE_ID: "2"
+
+      DATASET_PATH: "/data/train.csv"
+
+      FEATURE_SCHEMA_PATH: "/app/artifacts/feature_columns.json"
+
+      FL_SERVER_URL: "http://fl-server:8000"
+
+      TRAIN_ROUNDS: "5"
+
+      LOCAL_EPOCHS: "3"
+
+      LEARNING_RATE: "0.01"
+
+    volumes:
+
+      - ./dataset/partitions/home-2-train.csv:/data/train.csv:ro
+
+      - ./artifacts:/app/artifacts
+
+      - ./logs:/app/logs
+
+    depends_on:
+
+      - fl-server
+
+    networks:
+
+      - fednatd-net
+
+
+  # ==========================================================
+  # HOME 3
+  # ==========================================================
+
+  home-3:
+
+    build: .
+
+    command: ["python", "-u", "home.py"]
+
+    environment:
+
+      HOME_ID: "home-3"
+
+      DEVICE_ID: "3"
+
+      DATASET_PATH: "/data/train.csv"
+
+      FEATURE_SCHEMA_PATH: "/app/artifacts/feature_columns.json"
+
+      FL_SERVER_URL: "http://fl-server:8000"
+
+      TRAIN_ROUNDS: "5"
+
+      LOCAL_EPOCHS: "3"
+
+      LEARNING_RATE: "0.01"
+
+    volumes:
+
+      - ./dataset/partitions/home-3-train.csv:/data/train.csv:ro
+
+      - ./artifacts:/app/artifacts
+
+      - ./logs:/app/logs
+
+    depends_on:
+
+      - fl-server
+
+    networks:
+
+      - fednatd-net
+
+
+  # ==========================================================
+  # HOME 4
+  # ==========================================================
+
+  home-4:
+
+    build: .
+
+    command: ["python", "-u", "home.py"]
+
+    environment:
+
+      HOME_ID: "home-4"
+
+      DEVICE_ID: "4"
+
+      DATASET_PATH: "/data/train.csv"
+
+      FEATURE_SCHEMA_PATH: "/app/artifacts/feature_columns.json"
+
+      FL_SERVER_URL: "http://fl-server:8000"
+
+      TRAIN_ROUNDS: "5"
+
+      LOCAL_EPOCHS: "3"
+
+      LEARNING_RATE: "0.01"
+
+    volumes:
+
+      - ./dataset/partitions/home-4-train.csv:/data/train.csv:ro
+
+      - ./artifacts:/app/artifacts
+
+      - ./logs:/app/logs
+
+    depends_on:
+
+      - fl-server
+
+    networks:
+
+      - fednatd-net
+
+
+  # ==========================================================
+  # HOME 5
+  # ==========================================================
+
+  home-5:
+
+    build: .
+
+    command: ["python", "-u", "home.py"]
+
+    environment:
+
+      HOME_ID: "home-5"
+
+      DEVICE_ID: "5"
+
+      DATASET_PATH: "/data/train.csv"
+
+      FEATURE_SCHEMA_PATH: "/app/artifacts/feature_columns.json"
+
+      FL_SERVER_URL: "http://fl-server:8000"
+
+      TRAIN_ROUNDS: "5"
+
+      LOCAL_EPOCHS: "3"
+
+      LEARNING_RATE: "0.01"
+
+    volumes:
+
+      - ./dataset/partitions/home-5-train.csv:/data/train.csv:ro
+
+      - ./artifacts:/app/artifacts
+
+      - ./logs:/app/logs
+
+    depends_on:
+
+      - fl-server
+
+    networks:
+
+      - fednatd-net
+
+
+  # ==========================================================
+  # DATASET DOWNLOADER
+  # ==========================================================
+
+  dataset-downloader:
+
+    build: .
+
+    profiles:
+
+      - download
+
+    environment:
+
+      KAGGLE_CONFIG_DIR: /root/.kaggle
+
+    volumes:
+
+      - type: bind
+
+        source: C:/Users/zaara/.kaggle/access_token
+
+        target: /root/.kaggle/access_token
+
+        read_only: true
+
+        bind:
+
+          create_host_path: false
+
+      - nbaiot-data:/dataset
+
+    command:
+
+      - kaggle
+
+      - datasets
+
+      - download
+
+      - -d
+
+      - mkashifn/nbaiot-dataset
+
+      - -p
+
+      - /dataset
+
+      - --unzip
+
+
+  # ==========================================================
+  # PREPROCESSING
+  # ==========================================================
+
+  preprocess:
+
+    build: .
+
+    profiles:
+
+      - preprocessing
+
+    volumes:
+
+      - nbaiot-data:/dataset
+
+      - ./:/app
+
+    working_dir: /app
+
+    command:
+
+      - python
+
+      - -u
+
+      - preprocess.py
+
+
+# ============================================================
+# NETWORKS AND VOLUMES
+# ============================================================
+
+networks:
+
+  fednatd-net:
+
+    driver: bridge
+
+
+volumes:
+
+  nbaiot-data:
