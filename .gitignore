@@ -9,7 +9,7 @@
 .ruff_cache/
 .coverage
 htmlcov/
-
+.pytest_cache/
 # Virtual environments
 
 venv/
@@ -36,6 +36,27 @@ access_token.txt
 access_token
 
 # DATASETS
+dataset/*.csv
+dataset/*.zip
+dataset/**/*.csv
+
+# Rust compiler build artifacts
+circom/target/
+
+# Local Circom compiler source (installed separately)
+/circom/
+
+# ZKP temporary witness files
+zkp/build/*.wtns
+zkp/build/*.ptau
+
+# Temporary files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+
 
 # Original downloaded dataset
 
@@ -263,3 +284,17 @@ We'll preserve your existing `home.py`, `server.py`, and `docker-compose.yml` un
 **One thing I particularly want to maintain:** every experiment should have its own configuration, random seed, model, history, and metrics. This will make your eventual paper much easier to reproduce and defend.
 
 After creating the `.gitignore`, run `git status --short` and send me the output.
+
+# Allow required ZKP build artifacts despite the general build/ rule
+!/zkp/build/
+!/zkp/build/inference_final.zkey
+!/zkp/build/inference.r1cs
+!/zkp/build/verification_key.json
+!/zkp/build/inference_js/
+!/zkp/build/inference_js/**
+ 
+# Never commit private witness files
+zkp/**/*.wtns
+
+# Private ZKP inputs - keep local, do not publish
+zkp/inputs/*.json

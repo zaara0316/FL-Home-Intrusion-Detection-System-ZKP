@@ -1,0 +1,3 @@
+Sample,Runs,Avg Witness Generation (s),Avg Proof Generation (s),Avg Verification (s),Proof Size (bytes),Witness Size (bytes)
+attack,5,0.29133996000164186,572.973220660002,2.854773779999232,2254,2177132
+benign,5,0.2898030399926938,232.2090264600003,2.8528972600062845,2246,2177132
